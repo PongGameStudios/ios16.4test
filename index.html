@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link href="common.css" rel="stylesheet">
+    <script>
+        totalSeconds = 0;
+console.log("index start");
+        window.onload = function () {
+            setInterval(setTime, 1000);
+            cc.game.run();
+            console.log("window onload");
+        };
+
+        function setTime() {
+            ++totalSeconds;
+            document.getElementById("seconds").innerHTML = pad(totalSeconds % 60);
+            document.getElementById("minutes").innerHTML = pad(parseInt(totalSeconds / 60));
+        }
+        function pad(val) {
+            var valString = val + "";
+            if (valString.length < 2) {
+                return "0" + valString;
+            } else {
+                return valString;
+            }
+        }
+
+    </script>
+
+    
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = no, viewport-fit=cover" />
+</head>
+
+<body style="padding:0; margin: 0; background: #000;">
+    <label id="minutes">00</label>
+    <label id="colon">:</label>
+    <label id="seconds">00</label>
+	<label id="name">/// 10 second crash with logs</label>
+<canvas id="gameCanvas" width="1366" height="768"></canvas>
+	<div id="container" >
+		
+	
+        <label id="logs" class="overlay" > </label>
+    </div>
+
+	<script src="game_317.min.js?_t=pfhchangeset"></script>
+	<script src="main_317test.js?_t=pfhchangeset"></script>
+</body>
+
+</html>
